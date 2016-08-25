@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="app.js"></script>   
+</head>
+<body > 
+    <!--creation of radio buttons-->
+    
+        <label for="top">Top</label>
+        <input type="radio" name="content" ng-model="content" value="top">
+        <label for="bottom">Bottom</label> 
+        <input type="radio" name="content" ng-model="content" value="bottom">
+        <label for="right">Right</label>
+        <input type="radio" name="content" ng-model="content" value="right">
+        <label for="left">Left</label> 
+        <input type="radio" name="content" ng-model="content" value="left">
+      <hr />
+       
+       
+       <div ng-show="content == 'top'" ng-controller="radioButtonController">
+            <button type="button" class="btn btn-primary" ng-click="home()">HOME</button>
+            <button type="button" class="btn btn-primary" ng-click="About()">AboutUs</button>
+            <button type="button" class="btn btn-primary" ng-click="help()">Help</button>
+            <button type="button" class="btn btn-primary" ng-click="contact()">ContactUs</button>
+            <hr />
+            <center><b><span ng-bind="message"></span></b></center>
+        </div>
+
+        <div ng-show="content == 'left'" ng-controller="radioButtonController">
+            <button type="button" class="btn btn-primary" ng-click="home()">Home</button><br /><br />
+            <button type="button" class="btn btn-primary" ng-click="About()">About</button><br /><br />
+            <button type="button" class="btn btn-primary" ng-click="help()">Help</button><br /><br />
+            <button type="button" class="btn btn-primary" ng-click="contact()">ContactUs</button>
+            <hr />
+            <center><b><span ng-bind="message"></span></b></center>
+        </div>
+
+        <div style="padding-left:450px;" ng-show="content == 'right'" ng-controller="radioButtonController">
+            <button type="button" class="btn btn-primary" ng-click="home()">Home</button><br /><br />
+            <button type="button" class="btn btn-primary" ng-click="About()">About</button><br /><br />
+            <button type="button" class="btn btn-primary" ng-click="help()">Help</button><br /><br />
+            <button type="button" class="btn btn-primary" ng-click="contact()">ContactUs</button>
+            <hr />
+            <center><b><span ng-bind="message"></span></b></center>
+        </div>
+
+        <div style="margin-top:300px;" ng-show="content == 'bottom'" ng-controller="radioButtonController">
+            <button type="button" class="btn btn-primary" ng-click="home()">HOME</button>
+            <button type="button" class="btn btn-primary" ng-click="About()">AboutUs</button>
+            <button type="button" class="btn btn-primary" ng-click="help()">Help</button>
+            <button type="button" class="btn btn-primary" ng-click="contact()">ContactUs</button>
+            <hr />
+            <center><b><span ng-bind="message"></span></b></center>
+        </div>
+</body>
+</html>
